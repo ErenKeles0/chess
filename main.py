@@ -37,20 +37,33 @@ class square():
             basilan1img=self.img
 
 
-        elif basilan==1:
-            if not self.id[1]==basilan1id[1]:
-                for i in board:
-                    if i.id==basilan1id:
+        elif basilan==1 and not(basilan1id==self.id):
+            for i in board:
+                if basilan1id==i.id:
+                    iimg1=i.img
+                    iimg2=self.img
+                    i.img=iimg2
+                    self.img=iimg1
 
-                        img1=i.imagee
-                        img2=self.imagee
-                        self.button["image"]=img1
-                        i.button["image"]=img2
+                    img1=i.imagee
+                    img2=self.imagee
+                    self.button["image"]=img1
+                    i.button["image"]=img2
+
+                    idid=i.id
+                    i.id=self.id
+                    self.id=idid
+
 
 
             basilan=0
 
+        elif basilan1id==self.id:
+            basilan=0
+            self.basildimi=False
 
+        for a in board:
+            print(a.id)
 
 
 
@@ -141,7 +154,6 @@ board=[A8,B8,C8,D8,E8,F8,G8,H8,
        A3,B3,C3,D3,E3,F3,G3,H3,
        A2,B2,C2,D2,E2,F2,G2,H2,
        A1,B1,C1,D1,E1,F1,G1,H1,]
-
 
 
 
